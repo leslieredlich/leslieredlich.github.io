@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Leslie Redlich — Desarrolladora Full Stack</title>
+<meta name="description" content="Desarrolladora Full Stack. Construyo sistemas de gestión en Laravel y Node.js: inventarios, órdenes de trabajo, permisos y pagos." />
+<meta name="author" content="Leslie Redlich" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Leslie Redlich — Desarrolladora Full Stack" />
+<meta property="og:description" content="Construyo sistemas de gestión donde los datos tienen que cuadrar." />
+<meta property="og:url" content="https://leslieredlich.github.io" />
+<meta property="og:image" content="https://leslieredlich.github.io/assets/img/promecanica.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230F151B'/><text y='72' x='50' text-anchor='middle' font-family='monospace' font-size='58' font-weight='bold' fill='%23E0870A'>LR</text></svg>" />
+</head>
+<body>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__mark" href="#top" aria-label="Inicio">
+      <span class="nav__mark-badge">LR</span>
+      <span class="nav__mark-name">Leslie Redlich</span>
+    </a>
+    <nav class="nav__links" aria-label="Secciones">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#stack">Stack</a>
+      <a class="nav__cta" href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero" id="top">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="wrap hero__inner">
+
+    <p class="status" data-anim="1">
+      <span class="status__dot"></span>
+      <span class="status__label">Disponible para proyectos</span>
+    </p>
+
+    <h1 class="hero__name">
+      <span class="hero__line" data-anim="2">Leslie</span>
+      <span class="hero__line hero__line--alt" data-anim="3">Redlich</span>
+    </h1>
+
+    <p class="hero__lead" data-anim="4">
+      Desarrolladora Full Stack. Construyo sistemas de gestión donde los datos
+      tienen que cuadrar: inventarios, órdenes de trabajo, permisos y pagos.
+    </p>
+
+    <div class="hero__actions" data-anim="5">
+      <a class="btn btn--solid" href="#proyectos">Ver proyectos</a>
+      <a class="btn btn--ghost" href="#contacto">Escríbeme</a>
+    </div>
+
+    <div class="ticker" data-anim="6" aria-label="Tecnologías principales">
+      <span>Laravel</span><i></i>
+      <span>Node.js</span><i></i>
+      <span>PostgreSQL</span><i></i>
+      <span>React</span><i></i>
+      <span>TypeScript</span><i></i>
+      <span>Docker</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ SOBRE MÍ ═══════════════════════ -->
+<section class="band" id="sobre-mi">
+  <div class="wrap">
+    <p class="eyebrow reveal">Sobre mí</p>
+
+    <div class="about">
+      <div class="about__text reveal">
+        <p class="about__lead">
+          Empecé en PHP y WordPress, y de ahí fui subiendo: primero temas a medida,
+          después sistemas administrativos completos en Laravel, y hoy una plataforma
+          multi-tenant con su propio panel de control.
+        </p>
+        <p>
+          En paralelo estoy consolidando JavaScript —Node, Express, PostgreSQL— en un
+          Bootcamp Full Stack. No llegué a la arquitectura desde la teoría, sino desde
+          haber tenido que resolverla.
+        </p>
+        <p>
+          Lo que más me interesa es el backend. La parte que no se ve: cómo se modelan
+          los datos, cómo se mantiene la integridad cuando algo falla a medias, y cómo
+          se define quién puede hacer qué.
+        </p>
+      </div>
+
+      <aside class="ficha reveal" aria-label="Ficha técnica">
+        <p class="ficha__title">Ficha técnica</p>
+        <dl class="ficha__list">
+          <div class="ficha__row"><dt>Ubicación</dt><dd>Chile</dd></div>
+          <div class="ficha__row"><dt>Modalidad</dt><dd>Remoto o híbrido</dd></div>
+          <div class="ficha__row"><dt>Foco</dt><dd>Backend y datos</dd></div>
+          <div class="ficha__row"><dt>Idiomas</dt><dd>Español · Inglés técnico</dd></div>
+          <div class="ficha__row"><dt>Formación</dt><dd>Bootcamp Full Stack JS</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ PROCESO ═══════════════════════ -->
+<section class="shop" id="proceso">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--light reveal">Proceso de trabajo</p>
+    <h2 class="shop__title reveal">Cómo trabajo un proyecto</h2>
+    <p class="shop__sub reveal">
+      Cuatro estados. Ninguno se salta, y cada uno tiene que cerrar antes de que empiece el siguiente.
+    </p>
+
+    <ol class="pipe" id="pipe">
+      <li class="pipe__step">
+        <span class="pipe__num">01</span>
+        <span class="pipe__bar"></span>
+        <h3 class="pipe__name">Investigación</h3>
+        <p class="pipe__copy">
+          Entiendo el negocio antes de escribir código. Qué proceso se está
+          reemplazando, quién lo usa a diario y qué pasa cuando falla.
+        </p>
+      </li>
+      <li class="pipe__step">
+        <span class="pipe__num">02</span>
+        <span class="pipe__bar"></span>
+        <h3 class="pipe__name">Diseño</h3>
+        <p class="pipe__copy">
+          Modelo los datos primero. Las tablas, las relaciones y los estados
+          definen todo lo que el sistema podrá hacer después.
+        </p>
+      </li>
+      <li class="pipe__step">
+        <span class="pipe__num">03</span>
+        <span class="pipe__bar"></span>
+        <h3 class="pipe__name">Desarrollo</h3>
+        <p class="pipe__copy">
+          Construyo por capas y en incrementos que funcionan. Cada módulo entra
+          terminado, no queda a medias esperando el final.
+        </p>
+      </li>
+      <li class="pipe__step">
+        <span class="pipe__num">04</span>
+        <span class="pipe__bar"></span>
+        <h3 class="pipe__name">Pruebas</h3>
+        <p class="pipe__copy">
+          Verifico los casos límite: qué pasa si un pago falla a medias, si dos
+          usuarios editan lo mismo, si el stock queda en cero.
+        </p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════════════════ PROYECTOS ═══════════════════════ -->
+<section class="band" id="proyectos">
+  <div class="wrap">
+    <p class="eyebrow reveal">Proyectos</p>
+    <h2 class="h2 reveal">Sistemas que he construido</h2>
+
+    <div class="cards">
+
+      <!-- Promecánica -->
+      <article class="card card--wide reveal">
+        <figure class="card__media">
+          <img src="assets/img/promecanica.png" alt="Panel de gestión de Promecánica con métricas mensuales y órdenes de trabajo por estado" width="1520" height="727" loading="lazy" />
+        </figure>
+        <div class="card__body">
+          <p class="card__kind">Plataforma SaaS</p>
+          <h3 class="card__title">Promecánica</h3>
+          <p class="card__desc">
+            Plataforma multi-tenant que administra la operación completa de un taller
+            mecánico: órdenes de trabajo, inventario, cotizaciones, clientes y pagos.
+            Cada taller opera sobre su propia base de datos aislada.
+          </p>
+          <ul class="specs">
+            <li><span>Arquitectura</span><b>Multi-tenant con bases aisladas</b></li>
+            <li><span>Módulos</span><b>OT · Inventario · CRM · Suscripciones</b></li>
+            <li><span>Pagos</span><b>Transbank · Mercado Pago</b></li>
+          </ul>
+          <p class="tags">
+            <span>Laravel 11</span><span>PHP 8.2</span><span>Inertia.js</span><span>Tailwind</span><span>Docker</span><span>MySQL</span>
+          </p>
+          <p class="card__links"><span class="lock">Código privado — disponible bajo solicitud</span></p>
+        </div>
+      </article>
+
+      <!-- Gestión Inmobiliaria -->
+      <article class="card reveal">
+        <figure class="card__media">
+          <img src="assets/img/gestion-inmobiliaria.jpg" alt="Panel del sistema de gestión inmobiliaria" width="1520" height="756" loading="lazy" />
+        </figure>
+        <div class="card__body">
+          <p class="card__kind">Sistema web</p>
+          <h3 class="card__title">Gestión Inmobiliaria</h3>
+          <p class="card__desc">
+            Sistema integral para una corredora de propiedades: publicación con estados,
+            captación de leads desde formularios públicos, tasaciones y panel
+            administrativo con roles diferenciados.
+          </p>
+          <p class="tags">
+            <span>Laravel 9</span><span>PHP 8</span><span>Blade</span><span>Bootstrap 5</span><span>MySQL</span>
+          </p>
+          <p class="card__links">
+            <a href="https://github.com/leslieredlich/gestion_inmobiliaria" target="_blank" rel="noopener">Ver código →</a>
+          </p>
+        </div>
+      </article>
+
+      <!-- Propiedades -->
+      <article class="card reveal">
+        <figure class="card__media">
+          <img src="assets/img/propiedades.jpg" alt="Tema WordPress Propiedades para corredoras inmobiliarias" width="1520" height="798" loading="lazy" />
+        </figure>
+        <div class="card__body">
+          <p class="card__kind">Tema WordPress</p>
+          <h3 class="card__title">Propiedades</h3>
+          <p class="card__desc">
+            Tema desarrollado desde cero para corredoras, no una plantilla adaptada.
+            Custom Post Types propios y búsqueda por comuna, tipo y rango de precio.
+          </p>
+          <p class="tags">
+            <span>WordPress</span><span>PHP</span><span>JavaScript</span><span>CSS3</span>
+          </p>
+          <p class="card__links">
+            <a href="https://github.com/leslieredlich/propiedades" target="_blank" rel="noopener">Ver código →</a>
+          </p>
+        </div>
+      </article>
+
+      <!-- API de Países -->
+      <article class="card reveal">
+        <div class="card__media card__media--blueprint">
+          <span class="bp__label">API REST</span>
+          <span class="bp__note">Cursores · Transacciones</span>
+        </div>
+        <div class="card__body">
+          <p class="card__kind">Backend / Datos</p>
+          <h3 class="card__title">API de Países</h3>
+          <p class="card__desc">
+            Backend sobre PostgreSQL con tres tablas relacionadas. Pagina con cursores
+            en vez de cargar todo en memoria, y escribe de forma transaccional: si un
+            paso falla, revierte completo.
+          </p>
+          <ul class="specs">
+            <li><span>Lectura</span><b>Paginación por cursor</b></li>
+            <li><span>Escritura</span><b>COMMIT / ROLLBACK</b></li>
+          </ul>
+          <p class="tags">
+            <span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>pg-cursor</span>
+          </p>
+          <p class="card__links">
+            <a href="https://github.com/leslieredlich/evaluacion-final-modulo-7" target="_blank" rel="noopener">Ver código →</a>
+          </p>
+        </div>
+      </article>
+
+      <!-- DevKreativo -->
+      <article class="card reveal">
+        <div class="card__media card__media--blueprint">
+          <span class="bp__label">Next.js 15</span>
+          <span class="bp__note">React 19 · TypeScript</span>
+        </div>
+        <div class="card__body">
+          <p class="card__kind">Sitio corporativo</p>
+          <h3 class="card__title">DevKreativo</h3>
+          <p class="card__desc">
+            Sitio de agencia de desarrollo web y marketing digital, construido con
+            componentes modulares reutilizables e integración de Google Maps.
+          </p>
+          <p class="tags">
+            <span>Next.js 15</span><span>React 19</span><span>TypeScript</span><span>Tailwind</span>
+          </p>
+          <p class="card__links">
+            <a href="https://github.com/leslieredlich/devstudio" target="_blank" rel="noopener">Ver código →</a>
+          </p>
+        </div>
+      </article>
+
+      <!-- Registro de Mascotas -->
+      <article class="card reveal">
+        <div class="card__media card__media--blueprint">
+          <span class="bp__label">API REST</span>
+          <span class="bp__note">Arquitectura por capas</span>
+        </div>
+        <div class="card__body">
+          <p class="card__kind">Backend</p>
+          <h3 class="card__title">Registro de Mascotas</h3>
+          <p class="card__desc">
+            API con separación por capas para registrar, buscar y eliminar mascotas por
+            nombre o RUT, con validación de datos en el servidor.
+          </p>
+          <p class="tags">
+            <span>Node.js</span><span>Express</span><span>JavaScript</span>
+          </p>
+          <p class="card__links">
+            <a href="https://github.com/leslieredlich/Registro-Mascotas" target="_blank" rel="noopener">Ver código →</a>
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="more reveal">
+      <a href="https://github.com/leslieredlich?tab=repositories" target="_blank" rel="noopener">
+        Ver todos los repositorios en GitHub →
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STACK ═══════════════════════ -->
+<section class="band band--tint" id="stack">
+  <div class="wrap">
+    <p class="eyebrow reveal">Stack técnico</p>
+    <h2 class="h2 reveal">Con qué trabajo</h2>
+
+    <div class="stack">
+      <div class="stack__group reveal">
+        <p class="stack__head">Backend</p>
+        <ul class="chips">
+          <li>Laravel</li><li>PHP</li><li>Node.js</li><li>Express</li><li>API REST</li><li>JWT</li><li>Multer</li>
+        </ul>
+      </div>
+      <div class="stack__group reveal">
+        <p class="stack__head">Bases de datos</p>
+        <ul class="chips">
+          <li>PostgreSQL</li><li>MySQL</li><li>SQL</li><li>Sequelize</li><li>Eloquent</li>
+        </ul>
+      </div>
+      <div class="stack__group reveal">
+        <p class="stack__head">Frontend</p>
+        <ul class="chips">
+          <li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>HTML5</li><li>CSS3</li><li>Tailwind</li><li>Bootstrap</li><li>jQuery</li>
+        </ul>
+      </div>
+      <div class="stack__group reveal">
+        <p class="stack__head">Herramientas</p>
+        <ul class="chips">
+          <li>Git</li><li>GitHub</li><li>Docker</li><li>Postman</li><li>Vite</li><li>npm</li><li>WordPress</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CONTACTO ═══════════════════════ -->
+<section class="shop shop--end" id="contacto">
+  <div class="wrap contacto">
+    <p class="eyebrow eyebrow--light reveal">Contacto</p>
+    <h2 class="contacto__title reveal">¿Trabajamos juntos?</h2>
+    <p class="contacto__sub reveal">
+      Estoy abierta a oportunidades como desarrolladora Full Stack y a colaborar en
+      proyectos. Si te interesa mi trabajo o quieres conversar sobre una idea,
+      escríbeme — respondo siempre.
+    </p>
+
+    <div class="contacto__actions reveal">
+      <a class="btn btn--signal" href="mailto:leslieredlich@gmail.com">leslieredlich@gmail.com</a>
+      <a class="btn btn--outline" href="https://www.linkedin.com/in/leslieredlich/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn--outline" href="https://github.com/leslieredlich" target="_blank" rel="noopener">GitHub</a>
+      <!-- CV: sube tu PDF a assets/cv-leslie-redlich.pdf y descomenta la línea de abajo
+      <a class="btn btn--outline" href="assets/cv-leslie-redlich.pdf" download>Descargar CV</a>
+      -->
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <span>© <span id="year">2026</span> Leslie Redlich</span>
+    <span class="foot__meta">Hecho a mano · HTML, CSS y JavaScript</span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

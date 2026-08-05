@@ -1,0 +1,7 @@
+# Servidor local de previsualización, no forma parte del sitio
+serve.js
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
