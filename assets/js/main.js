@@ -5,6 +5,24 @@
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* Muestra todo de una vez. Es el estado final y también la red de seguridad:
+     si el observador nunca dispara, el contenido igual queda visible. */
+  function showEverything() {
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      el.classList.add('is-in');
+    });
+    var block = document.getElementById('txblock');
+    if (!block) return;
+    block.classList.add('is-open');
+    block.querySelectorAll('.tx__step').forEach(function (el) {
+      el.classList.add('is-done');
+    });
+  }
+
+  /* Ningún visitante debería quedarse mirando una página en blanco porque
+     IntersectionObserver no se activó. A los 4 segundos, se muestra todo. */
+  setTimeout(showEverything, 4000);
+
   /* Año actual en el footer */
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
@@ -20,12 +38,7 @@
   }
 
   if (reduced || !('IntersectionObserver' in window)) {
-    document.querySelectorAll('.reveal').forEach(function (el) {
-      el.classList.add('is-in');
-    });
-    document.querySelectorAll('.pipe__step').forEach(function (el) {
-      el.classList.add('is-live');
-    });
+    showEverything();
     return;
   }
 
@@ -42,21 +55,22 @@
     revealer.observe(el);
   });
 
-  /* El pipeline se enciende estado por estado, como una orden que avanza */
-  var pipe = document.getElementById('pipe');
-  if (pipe) {
-    var steps = Array.prototype.slice.call(pipe.querySelectorAll('.pipe__step'));
-    var pipeWatcher = new IntersectionObserver(function (entries) {
+  /* La transacción se ejecuta: baja el rail y cada paso se confirma en orden */
+  var txblock = document.getElementById('txblock');
+  if (txblock) {
+    var steps = Array.prototype.slice.call(txblock.querySelectorAll('.tx__step'));
+    var txWatcher = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
+        txblock.classList.add('is-open');
         steps.forEach(function (step, i) {
           setTimeout(function () {
-            step.classList.add('is-live');
-          }, i * 320);
+            step.classList.add('is-done');
+          }, 260 + i * 300);
         });
-        pipeWatcher.disconnect();
+        txWatcher.disconnect();
       });
-    }, { threshold: 0.3 });
-    pipeWatcher.observe(pipe);
+    }, { threshold: 0.22 });
+    txWatcher.observe(txblock);
   }
 })();
