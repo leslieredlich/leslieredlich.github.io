@@ -1,0 +1,12 @@
+﻿Guarda aqui los PDF o imagenes de tus certificados.
+
+Usa nombres sin espacios ni acentos, en minusculas. Por ejemplo:
+  docker-codigo-facilito.pdf
+  kubernetes-codigo-facilito.pdf
+  ia-desafio-latam.pdf
+
+La URL publica de cada archivo sera:
+  https://leslieredlich.github.io/assets/certificados/NOMBRE-DEL-ARCHIVO.pdf
+
+Esa URL sirve para el campo "URL de la credencial" de LinkedIn
+y para el enlace "Ver credencial" en index.html.
