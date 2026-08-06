@@ -147,7 +147,7 @@ a{ color:inherit; }
   align-items:end;
 }
 
-.avail{
+.tagline{
   display:inline-flex; align-items:center; gap:.6rem;
   font-family:var(--mono); font-size:.72rem;
   letter-spacing:.1em; text-transform:uppercase;
@@ -158,16 +158,10 @@ a{ color:inherit; }
   padding:.42rem .95rem;
   margin:0 0 1.9rem;
 }
-.avail__dot{
-  width:7px; height:7px; border-radius:50%;
+/* Marca estática: sin pulso, para que no se lea como un indicador de estado */
+.tagline__dot{
+  width:6px; height:6px; border-radius:50%;
   background:var(--teal);
-  box-shadow:0 0 0 0 rgba(23,112,107,.5);
-  animation:pulse 2.8s infinite;
-}
-@keyframes pulse{
-  0%{ box-shadow:0 0 0 0 rgba(23,112,107,.5); }
-  70%{ box-shadow:0 0 0 10px rgba(23,112,107,0); }
-  100%{ box-shadow:0 0 0 0 rgba(23,112,107,0); }
 }
 
 .hero__name{
