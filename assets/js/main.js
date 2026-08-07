@@ -55,6 +55,73 @@
     revealer.observe(el);
   });
 
+  /* Carrusel de capturas. Un slider con una sola imagen se deja tal cual:
+     los controles solo se activan cuando de verdad hay algo que recorrer. */
+  document.querySelectorAll('.slider').forEach(function (slider) {
+    var track = slider.querySelector('.slider__track');
+    var slides = track ? track.querySelectorAll('.slider__slide') : [];
+    if (!track || slides.length < 2) return;
+
+    slider.classList.add('is-multi');
+
+    var prev = slider.querySelector('.slider__btn--prev');
+    var next = slider.querySelector('.slider__btn--next');
+    var dotsBox = slider.querySelector('.slider__dots');
+    var count = slider.querySelector('.slider__count');
+    var dots = [];
+
+    slides.forEach(function (slide, i) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'slider__dot';
+      dot.setAttribute('aria-label', 'Ver captura ' + (i + 1) + ' de ' + slides.length);
+      dot.addEventListener('click', function () { goTo(i); });
+      dotsBox.appendChild(dot);
+      dots.push(dot);
+    });
+
+    function current() {
+      return Math.round(track.scrollLeft / track.clientWidth);
+    }
+
+    /* Pinta el estado de una posición dada. Se llama al navegar sin esperar
+       al evento de scroll, para que los controles nunca queden desfasados. */
+    function paint(i) {
+      dots.forEach(function (d, n) { d.setAttribute('aria-current', n === i ? 'true' : 'false'); });
+      if (count) count.textContent = (i + 1) + ' / ' + slides.length;
+      if (prev) prev.disabled = i === 0;
+      if (next) next.disabled = i === slides.length - 1;
+    }
+
+    function goTo(i) {
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      track.scrollTo({ left: i * track.clientWidth, behavior: reduced ? 'auto' : 'smooth' });
+      paint(i);
+    }
+
+    /* Para gestos de deslizamiento, donde la posición la decide el usuario */
+    function sync() { paint(current()); }
+
+    if (prev) prev.addEventListener('click', function () { goTo(current() - 1); });
+    if (next) next.addEventListener('click', function () { goTo(current() + 1); });
+
+    /* Flechas del teclado cuando el carrusel tiene el foco */
+    track.setAttribute('tabindex', '0');
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current() + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current() - 1); }
+    });
+
+    var ticking;
+    track.addEventListener('scroll', function () {
+      clearTimeout(ticking);
+      ticking = setTimeout(sync, 80);
+    }, { passive: true });
+
+    window.addEventListener('resize', sync);
+    sync();
+  });
+
   /* La transacción se ejecuta: baja el rail y cada paso se confirma en orden */
   var txblock = document.getElementById('txblock');
   if (txblock) {
