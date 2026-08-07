@@ -150,9 +150,9 @@
     <p class="eyebrow eyebrow--onplum reveal">Proceso de trabajo</p>
     <h2 class="tx__title reveal">Cómo trabajo un proyecto</h2>
     <p class="tx__sub reveal">
-      Lo pienso como una transacción: los pasos van en orden, cada uno cierra antes
-      de que empiece el siguiente, y si algo falla en el camino se vuelve atrás
-      completo — nunca a medias.
+      Trabajo en ciclos cortos, como una transacción: cada ciclo abre con algo
+      pequeño y cierra con una funcionalidad que alguien ya puede usar. Nada queda
+      a medias esperando el final del proyecto.
     </p>
 
     <div class="tx__block" id="txblock">
@@ -161,39 +161,40 @@
       <ol class="tx__steps">
         <li class="tx__step">
           <span class="tx__node" aria-hidden="true"></span>
-          <h3 class="tx__name"><i>01</i> Investigación</h3>
+          <h3 class="tx__name"><i>01</i> Entiendo el problema</h3>
           <p class="tx__copy">
-            Entiendo el negocio antes de escribir código. Qué proceso se está
-            reemplazando, quién lo usa a diario y qué pasa cuando falla.
+            Parto por lo más urgente, no por todo el sistema. Converso con quien lo
+            va a usar y convierto lo que aprendo en tareas chicas y priorizadas.
           </p>
         </li>
         <li class="tx__step">
           <span class="tx__node" aria-hidden="true"></span>
-          <h3 class="tx__name"><i>02</i> Diseño</h3>
+          <h3 class="tx__name"><i>02</i> Diseño lo justo</h3>
           <p class="tx__copy">
-            Modelo los datos primero. Las tablas, las relaciones y los estados
-            definen todo lo que el sistema podrá hacer después.
+            Modelo solo lo que necesita la tarea que viene. El resto del diseño
+            aparece con el sistema, no meses antes en un documento.
           </p>
         </li>
         <li class="tx__step">
           <span class="tx__node" aria-hidden="true"></span>
-          <h3 class="tx__name"><i>03</i> Desarrollo</h3>
+          <h3 class="tx__name"><i>03</i> Construyo algo usable</h3>
           <p class="tx__copy">
-            Construyo por capas y en incrementos que funcionan. Cada módulo entra
-            terminado, no queda esperando el final del proyecto.
+            Cada entrega es una funcionalidad completa que alguien puede abrir y
+            probar, no una capa suelta esperando a las demás.
           </p>
         </li>
         <li class="tx__step">
           <span class="tx__node" aria-hidden="true"></span>
-          <h3 class="tx__name"><i>04</i> Pruebas</h3>
+          <h3 class="tx__name"><i>04</i> Pruebo mientras avanzo</h3>
           <p class="tx__copy">
-            Verifico los casos límite: qué pasa si un pago falla a medias, si dos
-            personas editan lo mismo, si el stock queda en cero.
+            Las pruebas van con el código, no al final. Si algo falla lo corrijo en
+            el momento, antes de que se acumule con lo siguiente.
           </p>
         </li>
       </ol>
 
       <p class="tx__kw tx__kw--commit"><span>COMMIT</span></p>
+      <p class="tx__loop">↻ Y vuelve a empezar con la siguiente funcionalidad</p>
     </div>
   </div>
 </section>

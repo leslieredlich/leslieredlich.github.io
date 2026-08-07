@@ -345,6 +345,13 @@ a{ color:inherit; }
 .tx__kw--commit{ margin-top:.4rem; }
 .tx__kw--commit::before{ background:#D9A9C6; }
 
+/* El ciclo no termina: cierra y vuelve a abrir con la siguiente funcionalidad */
+.tx__loop{
+  font-family:var(--mono); font-size:.7rem;
+  letter-spacing:.1em; color:#94A3AF;
+  margin:.7rem 0 0;
+}
+
 .tx__steps{
   list-style:none;
   margin:0; padding:1.5rem 0;
