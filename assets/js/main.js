@@ -98,9 +98,12 @@
       paint(index);
     }
 
-    /* Para gestos de deslizamiento, donde la posición la decide el usuario */
+    /* Para gestos de deslizamiento, donde la posición la decide el usuario.
+       Si la pista aún no tiene ancho (la tarjeta no se ha maquetado todavía),
+       dividir daría NaN: en ese caso se conserva el índice que ya teníamos. */
     function sync() {
-      index = Math.round(track.scrollLeft / track.clientWidth);
+      var w = track.clientWidth;
+      if (w) index = Math.round(track.scrollLeft / w);
       paint(index);
     }
 
