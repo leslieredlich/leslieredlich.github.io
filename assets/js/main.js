@@ -80,12 +80,11 @@
       dots.push(dot);
     });
 
-    function current() {
-      return Math.round(track.scrollLeft / track.clientWidth);
-    }
+    /* El índice se guarda aparte y no se deriva del scroll en cada clic:
+       durante el desplazamiento suave scrollLeft va retrasado, y pulsar la
+       flecha varias veces seguidas avanzaría una sola posición. */
+    var index = 0;
 
-    /* Pinta el estado de una posición dada. Se llama al navegar sin esperar
-       al evento de scroll, para que los controles nunca queden desfasados. */
     function paint(i) {
       dots.forEach(function (d, n) { d.setAttribute('aria-current', n === i ? 'true' : 'false'); });
       if (count) count.textContent = (i + 1) + ' / ' + slides.length;
@@ -94,22 +93,25 @@
     }
 
     function goTo(i) {
-      i = Math.max(0, Math.min(slides.length - 1, i));
-      track.scrollTo({ left: i * track.clientWidth, behavior: reduced ? 'auto' : 'smooth' });
-      paint(i);
+      index = Math.max(0, Math.min(slides.length - 1, i));
+      track.scrollTo({ left: index * track.clientWidth, behavior: reduced ? 'auto' : 'smooth' });
+      paint(index);
     }
 
     /* Para gestos de deslizamiento, donde la posición la decide el usuario */
-    function sync() { paint(current()); }
+    function sync() {
+      index = Math.round(track.scrollLeft / track.clientWidth);
+      paint(index);
+    }
 
-    if (prev) prev.addEventListener('click', function () { goTo(current() - 1); });
-    if (next) next.addEventListener('click', function () { goTo(current() + 1); });
+    if (prev) prev.addEventListener('click', function () { goTo(index - 1); });
+    if (next) next.addEventListener('click', function () { goTo(index + 1); });
 
     /* Flechas del teclado cuando el carrusel tiene el foco */
     track.setAttribute('tabindex', '0');
     track.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current() + 1); }
-      if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current() - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(index + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(index - 1); }
     });
 
     var ticking;
